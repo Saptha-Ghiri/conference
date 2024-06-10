@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .slider {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+
+<div class="h-14 bg-red-700"></div>
+
+<div class="sm:h-screen">
+    <nav class="sm:flex justify-between bg-black p-3"  style="height: 10%;">
+        <div class="flex items-center justify-between text-white">
+            <div class="flex space-x-5 items-center justify-center"><div><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24M83.66 180.12l-4.8 8a8 8 0 1 1-13.72-8.24l4.8-8a8 8 0 0 1 13.72 8.24M128 152H56a8 8 0 0 1 0-16h35.47l27.2-45.33l-13.53-22.55a8 8 0 0 1 13.72-8.24L128 75.12l9.14-15.24a8 8 0 0 1 13.72 8.24L110.13 136H128a8 8 0 0 1 0 16m72 0h-25.87l16.73 27.88a8 8 0 0 1-13.72 8.24l-38.4-64a8 8 0 0 1 13.72-8.24L164.53 136H200a8 8 0 0 1 0 16"/></svg></div><div>NAME</div></div>
+            <div id="mobileNav" class="sm:hidden flex c1 justify-center  items-center pr-3" onclick="nav()"><svg id="toggleNavBtn" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M2.753 18h18.5a.75.75 0 0 1 .101 1.493l-.101.007h-18.5a.75.75 0 0 1-.102-1.494zh18.5zm0-6.497h18.5a.75.75 0 0 1 .101 1.493l-.101.007h-18.5a.75.75 0 0 1-.102-1.494zh18.5zm-.001-6.5h18.5a.75.75 0 0 1 .102 1.493l-.102.007h-18.5A.75.75 0 0 1 2.65 5.01zh18.5z"/></svg></div>
+        </div>
+        <div id="res_nav" class=" sm:flex items-center justify-start sm:pr-8 hidden h-96 sm:h-full sm:mt-0 " style="margin-bottom: 1000px;">
+            <ul class="sm:flex-row flex flex-col sm:space-x-9 text-2xl m-3 font-mono c1 w-full p-3 text-white">
+                <li class="h-full w-full" onclick="nav()"><a href="#about" class="p-3 flex justify-center sm:p-0 ">List 1</a></li>
+                <li class="h-full w-full" onclick="nav()"><a href="#skills" class="p-3 flex justify-center sm:p-0 ">List 2</a></li>
+                <li class="h-full w-full" onclick="nav()"><a href="#Achi" class="p-3 flex justify-center sm:p-0 ">List 3</a></li>
+                <li class="h-full w-full" onclick="nav()"><a href="#projects" class="p-3 flex justify-center sm:p-0 ">List 4</a></li>
+                <li class="h-full w-full" onclick="nav()"><a href="#contact" class="p-3 flex justify-center sm:p-0 ">List 5</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="img_container mx-auto">
+        <div class="slider">
+            <div class="slides h-screen">
+                <div class="slide">
+                    <img class="object-cover h-full" src="https://via.placeholder.com/2500x1200?text=Slide+1" alt="Slide 1" class="w-full">
+                </div>
+                <div class="slide">
+                    <img class="object-cover h-full" src="https://via.placeholder.com/2500x1200?text=Slide+2" alt="Slide 2" class="w-full">
+                </div>
+                <div class="slide">
+                    <img class="object-cover h-full" src="https://via.placeholder.com/2500x1200?text=Slide+3" alt="Slide 3" class="w-full">
+                </div>
+                <div class="slide">
+                    <img class="object-cover h-full" src="https://via.placeholder.com/2500x1200?text=Slide+4" alt="Slide 4" class="w-full">
+                </div>
+            </div>
+            <button id="prev" class="rounded-r absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-2 py-2"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M18.29 17.29a.996.996 0 0 0 0-1.41L14.42 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L12.3 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.38.38 1.01.38 1.4-.01"/><path fill="currentColor" d="M11.7 17.29a.996.996 0 0 0 0-1.41L7.83 12l3.88-3.88a.996.996 0 1 0-1.41-1.41L5.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59c.38.38 1.01.38 1.4-.01"/></svg></button>
+            <button id="next" class="rounded-l absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-2 py-2"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5.7 6.71a.996.996 0 0 0 0 1.41L9.58 12L5.7 15.88a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41L7.12 6.71c-.39-.39-1.03-.39-1.42 0"/><path fill="currentColor" d="M12.29 6.71a.996.996 0 0 0 0 1.41L16.17 12l-3.88 3.88a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41L13.7 6.7c-.38-.38-1.02-.38-1.41.01"/></svg></button>
+        </div>
+    </div>
+</div>
+
+<div class="p-16 mt-24 h-screen flex justify-center items-center">
+    <img class="object-cover h-full" src="https://via.placeholder.com/2500x1200?text=Poster" alt="Slide 4" class="w-full">
+</div>
+
+
+
+<script>
+    const slides = document.querySelector('.slides');
+    const slide = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+
+    document.getElementById('next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slide.length;
+        updateSlider();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slide.length) % slide.length;
+        updateSlider();
+    });
+
+    function updateSlider() {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+
+  function nav() {
+    if (screen.width <= 640) {
+
+    const mobileNav = document.getElementById("res_nav");
+    const body = document.body;
+
+    if (mobileNav) {
+        const currentDisplay = window.getComputedStyle(mobileNav).display;
+        mobileNav.style.display = currentDisplay === "none" ? "flex" : "none";
+        body.style.overflowY = currentDisplay === "none" ? "hidden" : "auto";
+    }
+}
+}
+
+</script>
+
+</body>
+</html>
