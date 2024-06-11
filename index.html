@@ -29,14 +29,17 @@
             overflow: hidden;
             position: relative;
             width: 100%;
+            height: 100vh; /* Ensure the slider takes up full viewport height */
         }
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            height: 100%;
         }
         .slide {
             min-width: 100%;
             box-sizing: border-box;
+            height: 100%; /* Ensure each slide takes up full height */
         }
     </style>
 </head>
@@ -51,8 +54,8 @@
             <div class="flex space-x-5 items-center justify-center"><div><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 256 256"><path fill="currentColor" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24M83.66 180.12l-4.8 8a8 8 0 1 1-13.72-8.24l4.8-8a8 8 0 0 1 13.72 8.24M128 152H56a8 8 0 0 1 0-16h35.47l27.2-45.33l-13.53-22.55a8 8 0 0 1 13.72-8.24L128 75.12l9.14-15.24a8 8 0 0 1 13.72 8.24L110.13 136H128a8 8 0 0 1 0 16m72 0h-25.87l16.73 27.88a8 8 0 0 1-13.72 8.24l-38.4-64a8 8 0 0 1 13.72-8.24L164.53 136H200a8 8 0 0 1 0 16"/></svg></div><div>GCAMP</div></div>
             <div id="mobileNav" class="sm:hidden flex c1 justify-center  items-center pr-3" onclick="nav()"><svg id="toggleNavBtn" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="currentColor" d="M2.753 18h18.5a.75.75 0 0 1 .101 1.493l-.101.007h-18.5a.75.75 0 0 1-.102-1.494zh18.5zm0-6.497h18.5a.75.75 0 0 1 .101 1.493l-.101.007h-18.5a.75.75 0 0 1-.102-1.494zh18.5zm-.001-6.5h18.5a.75.75 0 0 1 .102 1.493l-.102.007h-18.5A.75.75 0 0 1 2.65 5.01zh18.5z"/></svg></div>
         </div>
-        <div id="res_nav" class=" sm:flex items-center justify-start sm:pr-8 hidden h-96 sm:h-full sm:mt-0 " style="margin-bottom: 1000px;">
-            <ul class="sm:flex-row flex flex-col sm:space-x-9 text-2xl m-3 font-mono c1 w-full p-3 text-white">
+        <div id="res_nav" class=" sm:flex items-center justify-start sm:pr-8 hidden h-96 sm:h-full sm:mt-0 ">
+            <ul class="sm:flex-row flex flex-col sm:space-x-9 space-y-0 text-2xl m-3 font-mono c1 w-full p-3 text-white">
                 <li class="h-full w-full" onclick="nav()"><a href="#about" class="p-3 flex justify-center sm:p-0 ">List 1</a></li>
                 <li class="h-full w-full" onclick="nav()"><a href="#skills" class="p-3 flex justify-center sm:p-0 ">List 2</a></li>
                 <li class="h-full w-full" onclick="nav()"><a href="#Achi" class="p-3 flex justify-center sm:p-0 ">List 3</a></li>
@@ -92,9 +95,9 @@
     </div>
 </div>
 
-<div class="p-10 mt-64 h-screen flex justify-center items-center flex-col">
+<div class="p-10 flex justify-center items-center flex-col">
     <h1>POSTER</h1>
-    <img class="h-full" src="img/ICAMP Flyer_page-0001.jpg" alt="Slide 4" class="w-full">
+    <img class="h-full object-cover" src="img/ICAMP Flyer_page-0001.jpg" alt="Slide 4" class="w-full">
 </div>
 
 
